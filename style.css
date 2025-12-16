@@ -1,0 +1,481 @@
+/* ============================================
+   INVITACIÓN SONIC - ESTILO PELÍCULA
+   ============================================ */
+
+:root {
+    --neon-blue: #0099ff;
+    --neon-glow: #00d4ff;
+    --gold: #ffaa00;
+    --gold-light: #ffd700;
+    --dark-bg: #0a0e27;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: 
+        radial-gradient(ellipse at top, #1a2a4e 0%, #0a0e27 50%, #000000 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Rayos eléctricos decorativos */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--neon-glow) 50%, 
+        transparent 100%);
+    opacity: 0.3;
+    animation: lightning 4s ease-in-out infinite;
+}
+
+body::before {
+    top: 20%;
+    left: -50%;
+    transform: rotate(-15deg);
+}
+
+body::after {
+    bottom: 30%;
+    right: -50%;
+    transform: rotate(15deg);
+    animation-delay: 2s;
+}
+
+@keyframes lightning {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.5; }
+}
+
+.container {
+    max-width: 100%;
+    padding: 2rem 1.5rem 120px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== ANILLOS DORADOS ========== */
+.background-rings {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-ring {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 8px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.2;
+    box-shadow: 
+        0 0 30px var(--gold-light),
+        inset 0 0 20px rgba(255,215,0,0.3);
+    animation: floatRing 6s ease-in-out infinite;
+}
+
+.ring-anim-1 {
+    top: 5%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.ring-anim-2 {
+    top: 40%;
+    left: 3%;
+    animation-delay: 2s;
+}
+
+.ring-anim-3 {
+    bottom: 20%;
+    right: 8%;
+    animation-delay: 4s;
+}
+
+@keyframes floatRing {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+        opacity: 0.2;
+    }
+    50% { 
+        transform: translateY(-30px) scale(1.1); 
+        opacity: 0.4;
+    }
+}
+
+/* ========== HEADER NEÓN ========== */
+.header-blast {
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.speed-ray {
+    display: none;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.title-top {
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
+    color: var(--neon-glow);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 10px var(--neon-blue),
+        0 0 20px var(--neon-blue),
+        0 0 30px var(--neon-glow),
+        0 0 40px var(--neon-glow);
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { 
+        text-shadow: 
+            0 0 10px var(--neon-blue),
+            0 0 20px var(--neon-blue),
+            0 0 30px var(--neon-glow);
+    }
+    50% { 
+        text-shadow: 
+            0 0 15px var(--neon-blue),
+            0 0 30px var(--neon-blue),
+            0 0 45px var(--neon-glow),
+            0 0 60px var(--neon-glow);
+    }
+}
+
+.title-name {
+    font-family: 'Bangers', cursive;
+    font-size: 7rem;
+    background: linear-gradient(180deg, 
+        #fff 0%,
+        var(--gold-light) 30%,
+        var(--gold) 60%,
+        #cc8800 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: 
+        drop-shadow(0 0 20px var(--gold))
+        drop-shadow(3px 3px 0 rgba(0,0,0,0.5));
+    letter-spacing: 12px;
+    line-height: 0.9;
+    position: relative;
+    animation: goldShine 3s ease-in-out infinite;
+}
+
+@keyframes goldShine {
+    0%, 100% { 
+        filter: 
+            drop-shadow(0 0 15px var(--gold))
+            drop-shadow(3px 3px 0 rgba(0,0,0,0.5));
+    }
+    50% { 
+        filter: 
+            drop-shadow(0 0 30px var(--gold-light))
+            drop-shadow(3px 3px 0 rgba(0,0,0,0.5));
+    }
+}
+
+.title-age {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: var(--neon-glow);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 10px var(--neon-blue),
+        0 0 20px var(--neon-blue),
+        0 0 30px var(--neon-glow);
+}
+
+/* ========== SONIC SECTION ========== */
+.sonic-section {
+    margin: 2.5rem 0;
+    opacity: 0;
+}
+
+.sonic-badge {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+    position: relative;
+    background: radial-gradient(circle, 
+        rgba(0,100,255,0.3) 0%, 
+        rgba(0,50,150,0.5) 100%);
+    border-radius: 50%;
+    border: 8px solid var(--gold);
+    box-shadow: 
+        0 0 40px var(--gold),
+        inset 0 0 40px rgba(0,150,255,0.3),
+        0 30px 60px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+.sonic-char {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ring-collect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.golden-ring {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border: 8px solid var(--gold);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px var(--gold-light),
+        inset 0 0 15px rgba(255,215,0,0.4);
+    animation: ringFloat 3s ease-in-out infinite;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.golden-ring:nth-child(1) {
+    top: -18px;
+    left: 35px;
+}
+
+.golden-ring:nth-child(2) {
+    top: 45px;
+    right: -22px;
+    animation-delay: 0.5s;
+}
+
+.golden-ring:nth-child(3) {
+    bottom: 25px;
+    left: -18px;
+    animation-delay: 1s;
+}
+
+@keyframes ringFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* ========== CARDS ========== */
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    opacity: 0;
+}
+
+.detail-card {
+    background: linear-gradient(135deg, 
+        rgba(0,50,150,0.4) 0%, 
+        rgba(0,20,80,0.6) 100%);
+    border-radius: 25px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 
+        0 0 30px rgba(0,150,255,0.3),
+        0 20px 40px rgba(0,0,0,0.4);
+    border: 3px solid var(--neon-blue);
+    backdrop-filter: blur(10px);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    min-width: 70px;
+    text-align: center;
+    filter: drop-shadow(0 0 10px var(--gold));
+}
+
+.card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.detail-label {
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    color: var(--neon-glow);
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px var(--neon-blue);
+    margin-bottom: 0.5rem;
+}
+
+.detail-main {
+    font-family: 'Bangers', cursive;
+    font-size: 3.2rem;
+    color: #fff;
+    letter-spacing: 4px;
+    line-height: 1;
+    text-shadow: 
+        0 0 10px var(--neon-glow),
+        2px 2px 0 rgba(0,0,0,0.5);
+}
+
+.detail-sub {
+    font-size: 1rem;
+    color: var(--neon-glow);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* ========== UBICACIÓN ========== */
+.location-zone {
+    margin: 2.5rem 0;
+    opacity: 0;
+}
+
+.zone-title {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    background: linear-gradient(90deg, 
+        var(--gold) 0%,
+        var(--gold-light) 50%,
+        var(--gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    filter: drop-shadow(0 0 20px var(--gold));
+    margin-bottom: 1.5rem;
+    letter-spacing: 4px;
+}
+
+.location-card {
+    background: linear-gradient(135deg, 
+        rgba(0,50,150,0.4) 0%, 
+        rgba(0,20,80,0.6) 100%);
+    border-radius: 30px;
+    padding: 2.5rem 2rem;
+    box-shadow: 
+        0 0 40px rgba(0,150,255,0.4),
+        0 25px 50px rgba(0,0,0,0.5);
+    border: 4px solid var(--neon-blue);
+    backdrop-filter: blur(10px);
+}
+
+.location-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.loc-line {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px var(--neon-glow);
+    margin-bottom: 1rem;
+}
+
+.loc-address {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--neon-glow);
+    margin: 0.4rem 0;
+    line-height: 1.6;
+}
+
+.map-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, 
+        var(--gold) 0%,
+        var(--gold-light) 50%,
+        var(--gold) 100%);
+    color: #000;
+    padding: 1.5rem 3rem;
+    border-radius: 60px;
+    text-decoration: none;
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    box-shadow: 
+        0 0 30px var(--gold),
+        0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.3s;
+    font-weight: 900;
+}
+
+.map-button:active {
+    transform: scale(0.95);
+}
+
+/* ========== MENSAJE FINAL ========== */
+.final-blast {
+    margin: 2.5rem 0 2rem;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, 
+        rgba(255,170,0,0.3) 0%, 
+        rgba(255,215,0,0.2) 100%);
+    border-radius: 25px;
+    border: 3px solid var(--gold);
+    box-shadow: 
+        0 0 40px rgba(255,170,0,0.3),
+        0 20px 40px rgba(0,0,0,0.4);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    opacity: 0;
+}
+
+.final-blast p {
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.blast-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px var(--gold));
+}
+
+/* Responsive */
+@media (max-width: 380px) {
+    .title-name { font-size: 5.5rem; letter-spacing: 8px; }
+    .sonic-badge { width: 240px; height: 240px; }
+    .detail-main { font-size: 2.8rem; }
+}

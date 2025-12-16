@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Cumpleaños de Pablo - Sonic Party! 🦔</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Anillos flotantes de fondo -->
+    <div class="background-rings">
+        <div class="bg-ring ring-anim-1"></div>
+        <div class="bg-ring ring-anim-2"></div>
+        <div class="bg-ring ring-anim-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Explosivo -->
+        <div class="header-blast">
+            <div class="speed-ray left"></div>
+            <div class="speed-ray right"></div>
+            <h1 class="main-title">
+                <span class="title-top">¡ACOMPÁÑANOS A LA FIESTA!</span>
+                <span class="title-name">PABLO</span>
+                <span class="title-age">CUMPLE 3 AÑOS</span>
+            </h1>
+        </div>
+
+        <!-- Sonic Character Section -->
+        <div class="sonic-section">
+            <div class="sonic-badge">
+                <img src="character.gif" alt="Sonic" class="sonic-char">
+                <div class="ring-collect">
+                    <div class="golden-ring"></div>
+                    <div class="golden-ring"></div>
+                    <div class="golden-ring"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fecha y Hora con estilo Sonic -->
+        <div class="event-details">
+            <div class="detail-card date-card">
+                <div class="card-icon">📅</div>
+                <div class="card-content">
+                    <div class="detail-label">FECHA</div>
+                    <div class="detail-main">SÁBADO 27</div>
+                    <div class="detail-sub">DE DICIEMBRE</div>
+                </div>
+            </div>
+
+            <div class="detail-card time-card">
+                <div class="card-icon">⏰</div>
+                <div class="card-content">
+                    <div class="detail-label">HORA</div>
+                    <div class="detail-main">3:00 PM</div>
+                    <div class="detail-sub">NO LLEGUES TARDE</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ubicación -->
+        <div class="location-zone">
+            <div class="zone-title">UBICACIÓN 🏠</div>
+            <div class="location-card">
+                <div class="location-text">
+                    <p class="loc-line">EN CASA DE LA ABUELA</p>
+                    <p class="loc-address">Andador 5, Lote 2</p>
+                    <p class="loc-address">Col. Lomas del Seminario</p>
+                </div>
+                <a href="https://maps.app.goo.gl/2q6skTFH9v1D9xfB7" 
+                   target="_blank" 
+                   class="map-button">
+                    <span class="btn-icon">📍</span>
+                    <span class="btn-text">VER MAPA</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mensaje Final -->
+        <div class="final-blast">
+            <div class="blast-icon">⚡</div>
+            <p>¡TE ESPERAMOS PARA CORRER Y DIVERTIRNOS!</p>
+            <div class="blast-icon">⚡</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
