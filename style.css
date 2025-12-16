@@ -321,6 +321,64 @@ body::after {
     filter: drop-shadow(0 0 10px var(--gold));
 }
 
+/* Calendario personalizado */
+.calendar-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(180deg, #e74c3c 0%, #e74c3c 35%, #fff 35%, #fff 100%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px 8px 5px;
+    box-shadow: 
+        0 4px 15px rgba(255, 215, 0, 0.5),
+        inset 0 -2px 5px rgba(0,0,0,0.2);
+    border: 3px solid var(--gold);
+    position: relative;
+    filter: drop-shadow(0 0 15px var(--gold));
+}
+
+.calendar-icon::before,
+.calendar-icon::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.calendar-icon::before {
+    left: 15px;
+}
+
+.calendar-icon::after {
+    right: 15px;
+}
+
+.cal-month {
+    font-family: 'Bangers', cursive;
+    font-size: 0.7rem;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.cal-day {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: #000;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
 .card-content {
     flex: 1;
     text-align: left;
